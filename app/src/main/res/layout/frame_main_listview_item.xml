@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/title_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="这是一条信息titile"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/time_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2018-01-03 24:00:03"
+            android:layout_below="@+id/title_message"
+            android:layout_alignParentLeft="true"/>
+        <TextView
+            android:id="@+id/sponsor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/time_message"
+            android:layout_below="@+id/title_message"
+            android:layout_marginLeft="30dp"
+            android:text="黄松伟"
+            android:textColor="#3C98DB" />
+        <TextView
+            android:id="@+id/start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/sponsor"
+            android:layout_below="@+id/title_message"
+            android:layout_marginLeft="3dp"
+            android:text="发起" />
+
+        <ImageView
+            android:id="@+id/fight"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/fight"
+            android:layout_alignParentRight="true"
+            android:layout_alignBaseline="@+id/title_message"/>
+
+        <ImageView
+            android:id="@+id/new_pic"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/newpic"
+            android:layout_alignBottom="@+id/fight"
+            android:layout_toLeftOf="@+id/fight"
+            android:layout_toStartOf="@+id/fight" />
+
+    </RelativeLayout>
+
+</LinearLayout>
