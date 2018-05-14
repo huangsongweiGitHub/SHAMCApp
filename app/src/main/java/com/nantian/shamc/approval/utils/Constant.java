@@ -6,13 +6,16 @@ package com.nantian.shamc.approval.utils;
 
 public class Constant {
 
+    public final static int MAIN_FRAME_CALLABLE_QUERYAGENCYWORK=1;
+
+    public final static int MAIN_FRAME_CALLABLE_QUERYALLAGENCYWORK=2;
+
+    public final static int MAIN_FRAME_CALLABLE_QUERYALLAGENCY=3;
+
     public final static String F  = "f";
     public final static String FOO  = "foo";
     public final static String FOO_A = "a";
     public final static String APPLICANT = "applicant";
-
-
-
     public final static String USER_NAME = "username" ;
     public final static String PASSWORD = "password" ;
 

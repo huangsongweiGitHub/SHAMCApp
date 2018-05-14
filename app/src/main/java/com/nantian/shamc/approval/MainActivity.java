@@ -13,6 +13,7 @@ import com.google.gson.Gson;
 import com.nantian.shamc.approval.dto.LoginDto;
 import com.nantian.shamc.approval.utils.Constant;
 import com.nantian.shamc.approval.utils.Fvalue;
+import com.nantian.shamc.approval.utils.LogUtil;
 import com.nantian.shamc.approval.utils.OKHttpUtils;
 import com.nantian.shamc.approval.utils.ToolsUtils;
 
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             map.put(Constant.USER_NAME, username);
             map.put(Constant.PASSWORD, password);
             //发送报文验证登录信息
-            OKHttpUtils.doPost(url, map, new okhttp3.Callback() {
+            OKHttpUtils.doPostAsyn("LOGIN_BACK_MESSAGE",url, map, new okhttp3.Callback() {
                         @Override
                         public void onFailure(Call call, IOException e) {
                             Toast.makeText(MainActivity.this, "登录连接失败", Toast.LENGTH_SHORT).show();
@@ -65,14 +66,13 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(Call call, Response response) throws IOException {
                             String respMessage = response.body().string();
-                            Log.d("LOGIN_BACK_MESSAGE", "respMessage=" + respMessage);
+                            LogUtil.e("LOGIN_BACK_MESSAGE", "respMessage=" + respMessage);
                             LoginDto loginDto = new Gson().fromJson(respMessage, LoginDto.class);
                             if ("SUCCESS".equals(loginDto.getStatus())) {
-//                                判断是否真正的登录成功
-
+//                              判断是否真正的登录成功
                                 Intent intent = new Intent(MainActivity.this, MainFrameActivity.class);
                                 intent.putExtra(Constant.USER_NAME, username);
-//                                    intent.putExtra("password", password);
+//                              intent.putExtra("password", password);
                                 startActivity(intent);
                             } else {
                                 Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show();
