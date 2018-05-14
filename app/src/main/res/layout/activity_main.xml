@@ -24,6 +24,7 @@
         android:textSize="20sp" />
 
     <EditText
+        android:text="zhaoji"
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,6 +39,7 @@
         android:textSize="20sp" />
 
     <EditText
+        android:text="123456"
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
