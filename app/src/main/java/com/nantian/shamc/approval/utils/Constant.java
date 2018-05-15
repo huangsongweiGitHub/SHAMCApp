@@ -20,6 +20,7 @@ public class Constant {
     public final static String PASSWORD = "password" ;
 
 
-
-
+//    是否显示new图片判断
+    public final static String MEETING_CONF_CLOSE="02";
+    public final static String WORK_EXECUTE_STAT = "01";
 }

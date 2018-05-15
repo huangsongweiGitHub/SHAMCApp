@@ -10,11 +10,13 @@ import com.nantian.shamc.approval.utils.Constant;
 import com.nantian.shamc.approval.utils.Fvalue;
 import com.nantian.shamc.approval.utils.LogUtil;
 import com.nantian.shamc.approval.utils.OKHttpUtils;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
+
 /**
  * Created by huang on 2018/5/14.
  */
@@ -43,7 +45,7 @@ public class MainFrameCallable implements Callable {
         if (Constant.MAIN_FRAME_CALLABLE_QUERYAGENCYWORK == flag) {
             String jsonMessage = new Gson().toJson(map);
             String returnMessage = OKHttpUtils.doPost("QUERY_AGENCY_WORK", url, jsonMessage);
-            LogUtil.e("QUERY_AGENCY_WORK", "待办会议请求数据为："+jsonMessage+"返回数据:" + returnMessage);
+            LogUtil.e("QUERY_AGENCY_WORK", "待办会议请求数据为：" + jsonMessage + "返回数据:" + returnMessage);
             if (returnMessage != null) {
                 AgencyMeetingDto meetingDto = new Gson().fromJson(returnMessage, AgencyMeetingDto.class);
                 List<QueryConferencesBean> queryConferences = meetingDto.getData().getQueryConferences();
@@ -52,7 +54,9 @@ public class MainFrameCallable implements Callable {
                     mapTemp.put("title", queryConferencesBean.getConfprojectname());
                     mapTemp.put("time", queryConferencesBean.getConftime());
                     mapTemp.put("sponsor", queryConferencesBean.getConfownername());
-                    mapTemp.put("newpic", R.drawable.newpic);
+                    if (Constant.MEETING_CONF_CLOSE.equals(queryConferencesBean.getConfclose())) {
+                        mapTemp.put("newpic", R.drawable.newpic);
+                    }
                     dataList.add(mapTemp);
                 }
             }
@@ -63,7 +67,7 @@ public class MainFrameCallable implements Callable {
             map.put(Constant.APPLICANT, username);
             String jsonMessage = new Gson().toJson(map);
             String returnMessage = OKHttpUtils.doPost("QUERY_ALL_AGENCY_WORK", url, jsonMessage);
-            LogUtil.e("QUERY_ALL_AGENCY_WORK", "待办工作请求报文："+jsonMessage+"  返回数据:" + returnMessage);
+            LogUtil.e("QUERY_ALL_AGENCY_WORK", "待办工作请求报文：" + jsonMessage + "  返回数据:" + returnMessage);
             if (returnMessage != null) {
                 AgencyWorkDto workDto = new Gson().fromJson(returnMessage, AgencyWorkDto.class);
                 List<QueryMyWorkBeansBean> queryMyWorkBeansBeanList = workDto.getData().getQueryMyWorkBeans();
@@ -72,7 +76,9 @@ public class MainFrameCallable implements Callable {
                     mapTemp.put("title", queryMyWorkBeansBean.getBusiflowname());
                     mapTemp.put("time", queryMyWorkBeansBean.getApplytime());
                     mapTemp.put("sponsor", queryMyWorkBeansBean.getApplicant());
-                    mapTemp.put("newpic", R.drawable.newpic);
+                    if (Constant.WORK_EXECUTE_STAT.equals(queryMyWorkBeansBean.getExecutestat())) {
+                        mapTemp.put("newpic", R.drawable.newpic);
+                    }
                     dataList.add(mapTemp);
                 }
             }

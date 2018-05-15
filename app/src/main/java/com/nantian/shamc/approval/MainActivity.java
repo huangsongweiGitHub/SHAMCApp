@@ -57,7 +57,8 @@ public class MainActivity extends AppCompatActivity {
             map.put(Constant.USER_NAME, username);
             map.put(Constant.PASSWORD, password);
             //发送报文验证登录信息
-            OKHttpUtils.doPostAsyn("LOGIN_BACK_MESSAGE",url, map, new okhttp3.Callback() {
+
+            OKHttpUtils.doPostAsyn("LOGIN_BACK_MESSAGE",url, map, MainActivity.this.getApplicationContext(),new okhttp3.Callback() {
                         @Override
                         public void onFailure(Call call, IOException e) {
                             Toast.makeText(MainActivity.this, "登录连接失败", Toast.LENGTH_SHORT).show();

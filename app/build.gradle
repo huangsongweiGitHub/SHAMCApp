@@ -18,7 +18,12 @@ android {
         }
     }
 }
-
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -27,5 +32,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
     compile 'com.squareup.okhttp3:okhttp:3.10.0'
+    compile 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
     compile files('libs/gson-2.3.1.jar')
 }
