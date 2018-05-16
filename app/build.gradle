@@ -34,4 +34,5 @@ dependencies {
     compile 'com.squareup.okhttp3:okhttp:3.10.0'
     compile 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
     compile files('libs/gson-2.3.1.jar')
+    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
 }

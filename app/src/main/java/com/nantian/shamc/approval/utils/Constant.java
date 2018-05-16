@@ -23,4 +23,21 @@ public class Constant {
 //    是否显示new图片判断
     public final static String MEETING_CONF_CLOSE="02";
     public final static String WORK_EXECUTE_STAT = "01";
+
+
+
+//    流程类型实例
+    public final static String huiyi = "001";
+    public final static String xiangmulixiang = "01";
+    public final static String kexingxingfangan = "02";
+    public final static String xiangmuhetong = "03";
+    public final static String xiangmufukuan = "04";
+    public final static String kexingxingfangantuichu = "05";
+
+
+
+
+
+
+
 }

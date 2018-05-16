@@ -89,8 +89,8 @@ public class MainWaitingActivity extends AppCompatActivity
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-        String[] from = {"title", "time", "sponsor", "newpic"};
-        int[] to = {R.id.title_message, R.id.time_message, R.id.sponsor, R.id.new_pic};
+        String[] from = {"busiflowno","flowno","flowtype","title", "time", "sponsor", "newpic"};
+        int[] to = {R.id.busiflowno,R.id.flowno,R.id.flowtype,R.id.title_message, R.id.time_message, R.id.sponsor, R.id.new_pic};
         listMessageSimpleAdapter = new SimpleAdapter(this, data, R.layout.frame_main_listview_item, from, to);
         contentWaiting.setAdapter(listMessageSimpleAdapter);
     }
@@ -106,8 +106,8 @@ public class MainWaitingActivity extends AppCompatActivity
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-        String[] from = {"title", "time", "sponsor", "newpic"};
-        int[] to = {R.id.title_message, R.id.time_message, R.id.sponsor, R.id.new_pic};
+        String[] from = {"busiflowno","flowno","flowtype","title", "time", "sponsor", "newpic"};
+        int[] to = {R.id.busiflowno,R.id.flowno,R.id.flowtype,R.id.title_message, R.id.time_message, R.id.sponsor, R.id.new_pic};
         listMessageSimpleAdapter = new SimpleAdapter(this, data, R.layout.frame_main_listview_item, from, to);
         contentWaiting.setAdapter(listMessageSimpleAdapter);
     }

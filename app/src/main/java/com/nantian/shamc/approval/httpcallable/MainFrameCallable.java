@@ -51,9 +51,14 @@ public class MainFrameCallable implements Callable {
                 List<QueryConferencesBean> queryConferences = meetingDto.getData().getQueryConferences();
                 for (QueryConferencesBean queryConferencesBean : queryConferences) {
                     Map<String, Object> mapTemp = new HashMap();
+
+                    mapTemp.put("busiflowno",queryConferencesBean.getConfid());
+//                    mapTemp.put("flowno","");
+                    mapTemp.put("flowtype","001");
                     mapTemp.put("title", queryConferencesBean.getConfprojectname());
                     mapTemp.put("time", queryConferencesBean.getConftime());
                     mapTemp.put("sponsor", queryConferencesBean.getConfownername());
+
                     if (Constant.MEETING_CONF_CLOSE.equals(queryConferencesBean.getConfclose())) {
                         mapTemp.put("newpic", R.drawable.newpic);
                     }
@@ -73,6 +78,9 @@ public class MainFrameCallable implements Callable {
                 List<QueryMyWorkBeansBean> queryMyWorkBeansBeanList = workDto.getData().getQueryMyWorkBeans();
                 for (QueryMyWorkBeansBean queryMyWorkBeansBean : queryMyWorkBeansBeanList) {
                     Map<String, Object> mapTemp = new HashMap();
+                    mapTemp.put("busiflowno",queryMyWorkBeansBean.getBusiflowno());
+                    mapTemp.put("flowno", queryMyWorkBeansBean.getFlowno());
+                    mapTemp.put("flowtype",queryMyWorkBeansBean.getFlowtype());
                     mapTemp.put("title", queryMyWorkBeansBean.getBusiflowname());
                     mapTemp.put("time", queryMyWorkBeansBean.getApplytime());
                     mapTemp.put("sponsor", queryMyWorkBeansBean.getApplicant());

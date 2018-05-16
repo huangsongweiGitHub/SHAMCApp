@@ -32,6 +32,7 @@
     </RelativeLayout>
 
     <LinearLayout
+        android:background="@color/appBackground"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -43,10 +44,9 @@
             android:layout_weight="1"
             android:drawableTop="@drawable/waiting"
             android:text="代办工作"
-            android:background="#F5F6F7"
-            android:drawablePadding="10dp"
+            android:drawablePadding="4dp"
             android:textColor="#9E9FA0"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
         <Button
             android:id="@+id/already"
             android:layout_width="match_parent"
@@ -54,10 +54,9 @@
             android:layout_weight="1"
             android:drawableTop="@drawable/already"
             android:text="已办工作"
-            android:background="#F5F6F7"
-            android:drawablePadding="10dp"
+            android:drawablePadding="4dp"
             android:textColor="#9E9FA0"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <Button
             android:layout_width="match_parent"
@@ -65,10 +64,9 @@
             android:layout_weight="1"
             android:drawableTop="@drawable/already"
             android:text="办结工作"
-            android:background="#F5F6F7"
-            android:drawablePadding="10dp"
+            android:drawablePadding="4dp"
             android:textColor="#9E9FA0"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <Button
             android:layout_width="match_parent"
@@ -76,10 +74,9 @@
             android:layout_weight="1"
             android:drawableTop="@drawable/warning"
             android:text="预警信息"
-            android:background="#F5F6F7"
-            android:drawablePadding="10dp"
+            android:drawablePadding="4dp"
             android:textColor="#9E9FA0"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
     </LinearLayout>
 
     <LinearLayout
